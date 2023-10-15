@@ -10,15 +10,15 @@ newItemsArray.forEach((item, index) => {
   console.log(`Category: ${categoryTitle}`);
   console.log(`Elements: ${categoryElements}`);
 
-  if (index < countOfLi - 1) {
-    const nextCategoryTitle =
-      newItemsArray[index + 1].querySelector("h2").textContent;
-    console.log(`Next Category: ${nextCategoryTitle}`);
+  const nextItem = item.nextElementSibling;
+  if (nextItem) {
+    const nextCategoryTitle = nextItem.querySelector("h2").textContent;
+    // console.log(`Next Category: ${nextCategoryTitle}`);
   }
 
-  if (index > 0) {
-    const prevCategoryTitle =
-      newItemsArray[index - 1].querySelector("h2").textContent;
-    console.log(`Previous Category: ${prevCategoryTitle}`);
+  const prevItem = item.previousElementSibling;
+  if (prevItem) {
+    const prevCategoryTitle = prevItem.querySelector("h2").textContent;
+    // console.log(`Previous Category: ${prevCategoryTitle}`);
   }
 });
